@@ -1,0 +1,153 @@
+import Image from "next/image";
+import type { Block } from "@/content/projects";
+
+function Heading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+      {children}
+    </h2>
+  );
+}
+
+function Caption({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mt-3 text-sm leading-relaxed text-muted">{children}</p>
+  );
+}
+
+function ProseBlock({ block }: { block: Extract<Block, { kind: "prose" }> }) {
+  return (
+    <section className="space-y-4">
+      {block.heading && <Heading>{block.heading}</Heading>}
+      {block.paragraphs.map((paragraph) => (
+        <p key={paragraph} className="leading-relaxed text-muted">
+          {paragraph}
+        </p>
+      ))}
+    </section>
+  );
+}
+
+function VideoBlock({ block }: { block: Extract<Block, { kind: "video" }> }) {
+  return (
+    <section>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <Heading>{block.heading}</Heading>
+        <span className="text-sm tabular-nums text-muted">{block.duration}</span>
+      </div>
+      <div className="mt-5 overflow-hidden rounded-2xl border border-line bg-surface">
+        <video
+          controls
+          preload="none"
+          poster={block.poster}
+          className="block aspect-video w-full bg-ink"
+        >
+          <source src={block.src} type="video/mp4" />
+          Your browser does not support the video tag.{" "}
+          <a href={block.src}>Download the video</a> instead.
+        </video>
+      </div>
+      {block.caption && <Caption>{block.caption}</Caption>}
+    </section>
+  );
+}
+
+function FigureBlock({ block }: { block: Extract<Block, { kind: "figure" }> }) {
+  return (
+    <figure>
+      {block.heading && (
+        <div className="mb-5">
+          <Heading>{block.heading}</Heading>
+        </div>
+      )}
+      <div className="scroll-x rounded-2xl border border-line bg-white p-4">
+        <Image
+          src={block.src}
+          alt={block.alt}
+          width={block.width}
+          height={block.height}
+          className="mx-auto h-auto w-full max-w-lg"
+        />
+      </div>
+      {block.caption && (
+        <figcaption>
+          <Caption>{block.caption}</Caption>
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+function TableBlock({ block }: { block: Extract<Block, { kind: "table" }> }) {
+  const emphasized = new Set(block.emphasize ?? []);
+
+  return (
+    <section>
+      {block.heading && (
+        <div className="mb-5">
+          <Heading>{block.heading}</Heading>
+        </div>
+      )}
+      <div className="scroll-x rounded-2xl border border-line">
+        <table className="w-full min-w-md border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-line bg-surface text-left">
+              {block.columns.map((column) => (
+                <th
+                  key={column}
+                  scope="col"
+                  className="px-5 py-3 font-medium text-muted"
+                >
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.rows.map((row, rowIndex) => (
+              <tr
+                key={row[0]}
+                className="border-b border-line/60 last:border-b-0"
+              >
+                {row.map((cell, cellIndex) => (
+                  <td
+                    key={`${row[0]}-${cellIndex}`}
+                    className={
+                      cellIndex === 0
+                        ? "px-5 py-3 text-muted"
+                        : emphasized.has(rowIndex)
+                          ? "px-5 py-3 font-semibold tabular-nums text-accent"
+                          : "px-5 py-3 tabular-nums"
+                    }
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {block.caption && <Caption>{block.caption}</Caption>}
+    </section>
+  );
+}
+
+export function Blocks({ blocks }: { blocks: Block[] }) {
+  return (
+    <div className="space-y-16">
+      {blocks.map((block, index) => {
+        switch (block.kind) {
+          case "prose":
+            return <ProseBlock key={index} block={block} />;
+          case "video":
+            return <VideoBlock key={index} block={block} />;
+          case "figure":
+            return <FigureBlock key={index} block={block} />;
+          case "table":
+            return <TableBlock key={index} block={block} />;
+        }
+      })}
+    </div>
+  );
+}

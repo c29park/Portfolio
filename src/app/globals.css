@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0c0e;
+  --color-surface: #121418;
+  --color-line: #23262d;
+  --color-fg: #e8eaed;
+  --color-muted: #9aa1ab;
+  --color-accent: #6ea8fe;
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* Wide content (tables, figures) scrolls inside its own box, never the page. */
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
