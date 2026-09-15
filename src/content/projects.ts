@@ -69,31 +69,21 @@ const multimodalEncoderVisualizer: Project = {
       ],
     },
     {
-      kind: "video",
+      kind: "youtube",
       heading: "Video Processing Explanation",
-      // TODO(chris): the old site had no caption here — rewrite in your own words.
-      caption: "An explanation of how multimodal feature extraction is performed on a video.",
-      src: "/projects/multimodal-encoder-visualizer/video-processing-explanation-1080p.mp4",
+      caption:
+        "How the visualizer extracts multimodal features from a video: active speaker detection and diarization, vocal emotion analysis, and facial expression analysis.",
+      videoId: "msgui-kY1lY",
       poster: "/projects/multimodal-encoder-visualizer/video-processing-explanation-poster.jpg",
       duration: "6:28",
     },
-    // Once the 14-minute demo is on YouTube, replace the block below with this
-    // one and drop public/projects/.../app-demonstration-1080p.mp4:
-    //
-    //   {
-    //     kind: "youtube",
-    //     heading: "App Demonstration",
-    //     caption: "A demonstration of the visualizer web application.",
-    //     videoId: "PASTE_11_CHAR_ID_HERE",
-    //     poster: "/projects/multimodal-encoder-visualizer/app-demonstration-poster.jpg",
-    //     duration: "14:16",
-    //   },
     {
-      kind: "video",
+      kind: "youtube",
       heading: "App Demonstration",
-      // TODO(chris): the old site had no caption here — rewrite in your own words.
-      caption: "A demonstration of the visualizer web application.",
-      src: "/projects/multimodal-encoder-visualizer/app-demonstration-1080p.mp4",
+      // TODO(chris): written from the thumbnail, not the full video — adjust if off.
+      caption:
+        "A walkthrough of the tool running end to end on a real video, showing the extracted features alongside the transcript.",
+      videoId: "igmpV1qh1a4",
       poster: "/projects/multimodal-encoder-visualizer/app-demonstration-poster.jpg",
       duration: "14:16",
     },
