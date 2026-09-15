@@ -52,13 +52,27 @@ export function YouTubeEmbed({ videoId, title, poster, start }: Props) {
       aria-label={`Play video: ${title}`}
       className="group relative block aspect-video w-full cursor-pointer overflow-hidden bg-ink"
     >
-      <Image
-        src={poster ?? `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
-        alt=""
-        fill
-        sizes="(min-width: 768px) 768px, 100vw"
-        className="object-cover opacity-80 transition-all duration-300 group-hover:scale-[1.02] group-hover:opacity-100"
-      />
+      {poster ? (
+        <Image
+          src={poster}
+          alt=""
+          fill
+          sizes="(min-width: 768px) 768px, 100vw"
+          className="object-cover opacity-80 transition-all duration-300 group-hover:scale-[1.02] group-hover:opacity-100"
+        />
+      ) : (
+        // Fallback only. Deliberately a plain <img>: routing a third-party image
+        // through next/image would mean allowing i.ytimg.com in `remotePatterns`
+        // and running it through the optimizer, which is attack surface we do
+        // not need. Prefer a local poster.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 size-full object-cover opacity-80 transition-all duration-300 group-hover:scale-[1.02] group-hover:opacity-100"
+        />
+      )}
       <span className="absolute inset-0 grid place-items-center">
         <span className="grid size-16 place-items-center rounded-full bg-ink/70 ring-1 ring-fg/25 backdrop-blur transition-colors group-hover:bg-ink/90">
           <svg viewBox="0 0 24 24" aria-hidden className="ml-1 size-7 fill-fg">

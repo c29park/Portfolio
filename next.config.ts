@@ -3,11 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  images: {
-    // YouTube thumbnails, used as the embed poster when a local one is absent.
-    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
-  },
-
   async headers() {
     return [
       {
