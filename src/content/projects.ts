@@ -11,6 +11,16 @@ export type Block =
       duration: string;
     }
   | {
+      kind: "youtube";
+      heading: string;
+      caption?: string;
+      /** The 11-character ID from the watch URL: youtu.be/<videoId>. */
+      videoId: string;
+      /** Local poster path. Falls back to YouTube's thumbnail when omitted. */
+      poster?: string;
+      duration: string;
+    }
+  | {
       kind: "figure";
       heading?: string;
       caption?: string;
@@ -67,6 +77,17 @@ const multimodalEncoderVisualizer: Project = {
       poster: "/projects/multimodal-encoder-visualizer/video-processing-explanation-poster.jpg",
       duration: "6:28",
     },
+    // Once the 14-minute demo is on YouTube, replace the block below with this
+    // one and drop public/projects/.../app-demonstration-1080p.mp4:
+    //
+    //   {
+    //     kind: "youtube",
+    //     heading: "App Demonstration",
+    //     caption: "A demonstration of the visualizer web application.",
+    //     videoId: "PASTE_11_CHAR_ID_HERE",
+    //     poster: "/projects/multimodal-encoder-visualizer/app-demonstration-poster.jpg",
+    //     duration: "14:16",
+    //   },
     {
       kind: "video",
       heading: "App Demonstration",

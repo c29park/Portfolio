@@ -39,7 +39,34 @@ npx vercel --prod   # production deploy
 Vercel's Hobby bandwidth allowance (100 GB/month — the 97 MB demo would exhaust
 that in roughly 1,000 plays).
 
-Pick one before you commit:
+**The plan:** move the 14-minute demo to YouTube, keep the 6:28 explainer
+self-hosted. At 23 MB it's under GitHub's 50 MB warning line and starts
+instantly, and a native player without YouTube chrome looks better.
+
+### Swapping the demo to YouTube
+
+1. Upload `public/projects/multimodal-encoder-visualizer/app-demonstration-1080p.mp4`
+   to YouTube as **Unlisted**.
+2. Copy the 11-character ID from the URL (`youtu.be/<videoId>`).
+3. In `src/content/projects.ts`, replace the `kind: "video"` App Demonstration
+   block with the commented-out `kind: "youtube"` template directly above it,
+   pasting in the ID.
+4. Delete the MP4 and rewrite it out of git history (it is only in one commit):
+
+   ```bash
+   git rm --cached public/projects/multimodal-encoder-visualizer/app-demonstration-1080p.mp4
+   rm public/projects/multimodal-encoder-visualizer/app-demonstration-1080p.mp4
+   # then rewrite the single commit that introduced it, and force-push
+   ```
+
+The embed is a **click-to-load facade** (`src/components/YouTubeEmbed.tsx`): the
+page renders your own poster image, and YouTube's player — roughly a megabyte of
+JS, plus its cookies — only loads if a visitor actually presses play. It uses
+`youtube-nocookie.com`.
+
+### Other options considered
+
+
 
 1. **Vercel Blob** (cleanest). `npx vercel blob put <file>`, then replace the
    `src` in `src/content/projects.ts` with the returned URL. Blob is built for

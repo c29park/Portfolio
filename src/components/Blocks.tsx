@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Block } from "@/content/projects";
+import { YouTubeEmbed } from "./YouTubeEmbed";
 
 function Heading({ children }: { children: React.ReactNode }) {
   return (
@@ -28,27 +29,66 @@ function ProseBlock({ block }: { block: Extract<Block, { kind: "prose" }> }) {
   );
 }
 
-function VideoBlock({ block }: { block: Extract<Block, { kind: "video" }> }) {
+/** Shared chrome for both self-hosted and YouTube-hosted video blocks. */
+function MediaSection({
+  heading,
+  duration,
+  caption,
+  children,
+}: {
+  heading: string;
+  duration: string;
+  caption?: string;
+  children: React.ReactNode;
+}) {
   return (
     <section>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <Heading>{block.heading}</Heading>
-        <span className="text-sm tabular-nums text-muted">{block.duration}</span>
+        <Heading>{heading}</Heading>
+        <span className="text-sm tabular-nums text-muted">{duration}</span>
       </div>
       <div className="mt-5 overflow-hidden rounded-2xl border border-line bg-surface">
-        <video
-          controls
-          preload="none"
-          poster={block.poster}
-          className="block aspect-video w-full bg-ink"
-        >
-          <source src={block.src} type="video/mp4" />
-          Your browser does not support the video tag.{" "}
-          <a href={block.src}>Download the video</a> instead.
-        </video>
+        {children}
       </div>
-      {block.caption && <Caption>{block.caption}</Caption>}
+      {caption && <Caption>{caption}</Caption>}
     </section>
+  );
+}
+
+function VideoBlock({ block }: { block: Extract<Block, { kind: "video" }> }) {
+  return (
+    <MediaSection
+      heading={block.heading}
+      duration={block.duration}
+      caption={block.caption}
+    >
+      <video
+        controls
+        preload="none"
+        poster={block.poster}
+        className="block aspect-video w-full bg-ink"
+      >
+        <source src={block.src} type="video/mp4" />
+        Your browser does not support the video tag.{" "}
+        <a href={block.src}>Download the video</a> instead.
+      </video>
+    </MediaSection>
+  );
+}
+
+function YouTubeBlock({ block }: { block: Extract<Block, { kind: "youtube" }> }) {
+  return (
+    <MediaSection
+      heading={block.heading}
+      duration={block.duration}
+      caption={block.caption}
+    >
+      <YouTubeEmbed
+        videoId={block.videoId}
+        title={block.heading}
+        poster={block.poster}
+      />
+    </MediaSection>
   );
 }
 
@@ -142,6 +182,8 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
             return <ProseBlock key={index} block={block} />;
           case "video":
             return <VideoBlock key={index} block={block} />;
+          case "youtube":
+            return <YouTubeBlock key={index} block={block} />;
           case "figure":
             return <FigureBlock key={index} block={block} />;
           case "table":
