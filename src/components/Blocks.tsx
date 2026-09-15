@@ -10,9 +10,49 @@ function Heading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Caption({ children }: { children: React.ReactNode }) {
+const INLINE_LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+
+/**
+ * Renders markdown-style `[label](href)` spans in body copy as links.
+ *
+ * Builds React elements rather than an HTML string, so content text is never
+ * interpreted as markup — no dangerouslySetInnerHTML, nothing to escape.
+ */
+function withLinks(text: string): React.ReactNode {
+  const nodes: React.ReactNode[] = [];
+  let cursor = 0;
+
+  for (const match of text.matchAll(INLINE_LINK)) {
+    const [raw, label, href] = match;
+    const at = match.index;
+
+    if (at > cursor) nodes.push(text.slice(cursor, at));
+
+    const external = href.startsWith("http");
+    nodes.push(
+      <a
+        key={at}
+        href={href}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noreferrer noopener" : undefined}
+        className="text-fg underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+      >
+        {label}
+      </a>,
+    );
+    cursor = at + raw.length;
+  }
+
+  if (cursor === 0) return text;
+  if (cursor < text.length) nodes.push(text.slice(cursor));
+  return nodes;
+}
+
+function Caption({ children }: { children: string }) {
   return (
-    <p className="mt-3 text-sm leading-relaxed text-muted">{children}</p>
+    <p className="mt-3 text-sm leading-relaxed text-muted">
+      {withLinks(children)}
+    </p>
   );
 }
 
@@ -22,7 +62,7 @@ function ProseBlock({ block }: { block: Extract<Block, { kind: "prose" }> }) {
       {block.heading && <Heading>{block.heading}</Heading>}
       {block.paragraphs.map((paragraph) => (
         <p key={paragraph} className="leading-relaxed text-muted">
-          {paragraph}
+          {withLinks(paragraph)}
         </p>
       ))}
     </section>

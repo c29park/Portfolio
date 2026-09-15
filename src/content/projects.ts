@@ -64,7 +64,7 @@ const multimodalEncoderVisualizer: Project = {
       kind: "prose",
       heading: "Overview",
       paragraphs: [
-        "This is the web application I developed for the research at DSLab that was sponsored by ETRI (Electronics and Telecommunications Research Institute) for the project on Development of Previsional Intelligence Based on Long-term Visual Memory Network.",
+        "This is the web application I developed for the research at [DSLab](https://sites.google.com/site/datasciencelaboratory) that was sponsored by ETRI (Electronics and Telecommunications Research Institute) for the project on Development of Previsional Intelligence Based on Long-term Visual Memory Network.",
         "We researched multimodal video analysis for social forecasting on famous individuals, using a video dataset we developed ourselves. The task: predict whether a video would generate a spike in Google Search Volume for the famous individuals appearing in it. This tool visually demonstrates how the extraction of multimodal features is performed on a video.",
       ],
     },
