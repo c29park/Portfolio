@@ -1,3 +1,10 @@
+import {
+  escapeFromMars,
+  fraudDetection,
+  smileDetection,
+  vexRobotics,
+} from "./projects-ported";
+
 export type Block =
   | { kind: "prose"; heading?: string; paragraphs: string[] }
   | {
@@ -19,6 +26,13 @@ export type Block =
       /** Local poster path. Falls back to YouTube's thumbnail when omitted. */
       poster?: string;
       duration: string;
+    }
+  | {
+      kind: "code";
+      heading?: string;
+      caption?: string;
+      /** Preformatted text. Line breaks and spacing are preserved verbatim. */
+      text: string;
     }
   | {
       kind: "figure";
@@ -142,19 +156,15 @@ const multimodalEncoderVisualizer: Project = {
   ],
 };
 
-export const projects: Project[] = [multimodalEncoderVisualizer];
+/** Ordered newest-first; this is the order the home page grid renders. */
+export const projects: Project[] = [
+  multimodalEncoderVisualizer,
+  smileDetection,
+  fraudDetection,
+  escapeFromMars,
+  vexRobotics,
+];
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
-
-/**
- * Projects still to be ported over from the old Wix site.
- * Move one into `projects` above once its content is written.
- */
-export const upcomingProjects = [
-  { title: "Smile Detection Project", note: "CV pipeline — data preprocessing, training & testing" },
-  { title: "Fraud Detection Project", note: "ML prototype for preventing fraud against seniors" },
-  { title: "3D Game Project", note: "Gameplay and rendering work" },
-  { title: "VEX Robotics Project", note: "PD controller, odometry, robot design" },
-] as const;

@@ -132,6 +132,24 @@ function YouTubeBlock({ block }: { block: Extract<Block, { kind: "youtube" }> })
   );
 }
 
+function CodeBlock({ block }: { block: Extract<Block, { kind: "code" }> }) {
+  return (
+    <section>
+      {block.heading && (
+        <div className="mb-5">
+          <Heading>{block.heading}</Heading>
+        </div>
+      )}
+      <div className="scroll-x rounded-2xl border border-line bg-surface">
+        <pre className="p-5 text-sm leading-relaxed whitespace-pre text-fg">
+          {block.text}
+        </pre>
+      </div>
+      {block.caption && <Caption>{block.caption}</Caption>}
+    </section>
+  );
+}
+
 function FigureBlock({ block }: { block: Extract<Block, { kind: "figure" }> }) {
   return (
     <figure>
@@ -224,6 +242,8 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
             return <VideoBlock key={index} block={block} />;
           case "youtube":
             return <YouTubeBlock key={index} block={block} />;
+          case "code":
+            return <CodeBlock key={index} block={block} />;
           case "figure":
             return <FigureBlock key={index} block={block} />;
           case "table":

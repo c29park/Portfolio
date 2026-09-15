@@ -9,3 +9,6 @@ build
 .vercel
 next-env.d.ts
 *.tsbuildinfo
+
+# Large media waiting to be uploaded to YouTube. Never commit — see README.
+media-staging

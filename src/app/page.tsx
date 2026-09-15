@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/content/site";
-import { projects, upcomingProjects } from "@/content/projects";
+import { projects } from "@/content/projects";
 
 export default function Home() {
   return (
@@ -75,23 +75,6 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-          ))}
-
-          {upcomingProjects.map((project) => (
-            <div
-              key={project.title}
-              className="rounded-2xl border border-dashed border-line p-6"
-            >
-              <h3 className="text-lg font-semibold tracking-tight text-muted">
-                {project.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {project.note}
-              </p>
-              <p className="mt-4 text-xs uppercase tracking-[0.15em] text-muted/70">
-                Coming soon
-              </p>
-            </div>
           ))}
         </div>
       </section>
