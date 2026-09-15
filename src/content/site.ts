@@ -15,5 +15,6 @@ export const site = {
   links: [
     { label: "Email", href: `mailto:${email}` },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/chris-park-0b83b2291/" },
+    { label: "Learning Blog", href: "https://c29park.github.io" },
   ],
 } as const;
