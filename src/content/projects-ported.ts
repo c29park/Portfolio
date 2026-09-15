@@ -429,6 +429,10 @@ export const vexRobotics: Project = {
     },
     {
       kind: "code",
+      // Two substitution slips in the original Wix write-up are corrected here:
+      // the right-wheel line read `𝚫R/𝛉 = r - SL` (should be SR), and the x-axis
+      // result read `2(𝚫B/𝛉 + SL)` (should be SB — SB was defined and then
+      // never used). The conclusions on both lines were already right.
       text: `Let SR = distance from the robot's center to the right tracking wheel
 Let SL = distance from the robot's center to the left tracking wheel
 Let SB = distance from the robot's center to the back tracking wheel
@@ -440,7 +444,7 @@ left tracking wheel and 𝚫R the arc length travelled by the right one.
     𝚫L = (r + SL)𝛉            𝚫R = (r - SR)𝛉
 
     𝚫L/𝛉 = r + SL     ⇒   r = 𝚫L/𝛉 - SL
-    𝚫R/𝛉 = r - SL     ⇒   r = 𝚫R/𝛉 + SR
+    𝚫R/𝛉 = r - SR     ⇒   r = 𝚫R/𝛉 + SR
 
     𝚫L/𝛉 - SL = 𝚫R/𝛉 + SR
     𝚫L - SL𝛉  = 𝚫R + SR𝛉     ⇒   𝚫L - 𝚫R = 𝛉(SL + SR)
@@ -458,7 +462,9 @@ Since r = 𝚫R/𝛉 + SR,                   y = 2(𝚫R/𝛉 + SR)·sin(𝛉/2)
 The same theory applies on the x axis in terms of the back tracking
 wheel. Let 𝚫B be the arc travelled by the back tracking wheel:
 
-    x = 2(𝚫B/𝛉 + SL)·sin(𝛉/2)
+    𝚫B = (r - SB)𝛉    ⇒   r = 𝚫B/𝛉 + SB
+
+    x = 2(𝚫B/𝛉 + SB)·sin(𝛉/2)
 
 So there we go. If we know the distances travelled by the tracking
 wheels and the heading by inertial sensor, we can track our position
