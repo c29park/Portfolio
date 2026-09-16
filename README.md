@@ -110,15 +110,14 @@ src/
   content/
     site.ts                     name, bio, links
     projects.ts                 all project content
-content/source/                 raw text scraped from the old Wix site (reference)
 public/projects/                images and video
 ```
 
 ## Content provenance
 
 Copy, figures, and video were imported from the previous Wix site
-(`changhapark0501.wixsite.com/mysite`). The verbatim source text is preserved in
-`content/source/multimodal-encoder-visualizer.md` for reference.
+(`changhapark0501.wixsite.com/mysite`), which is still online if you need to
+check the original wording.
 
 Two things to review:
 

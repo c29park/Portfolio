@@ -1,8 +1,5 @@
 # Large media awaiting a YouTube upload — must never reach a deployment.
 media-staging
 
-# Raw text scraped from the old Wix site; reference only, not served.
-content/source
-
 .next
 node_modules
