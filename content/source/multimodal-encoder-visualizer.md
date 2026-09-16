@@ -84,4 +84,4 @@ Caption text (verbatim):
 ## Related context from the old home page
 
 Research: "Public Salience Prediction on Famous Individuals with Multimodal Analysis" —
-co-author at DSLab, Kwangwoon University, South Korea. Expected submission November 2025.
+co-author at DSLab, Kwangwoon University, South Korea.
