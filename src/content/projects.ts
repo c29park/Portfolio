@@ -78,8 +78,8 @@ const multimodalEncoderVisualizer: Project = {
       kind: "prose",
       heading: "Overview",
       paragraphs: [
-        "This is the web application I developed for the research at [DSLab](https://sites.google.com/site/datasciencelaboratory) that was sponsored by ETRI (Electronics and Telecommunications Research Institute) for the project on Development of Previsional Intelligence Based on Long-term Visual Memory Network.",
-        "We researched multimodal video analysis for social forecasting on famous individuals, using a video dataset we developed ourselves. The task: predict whether a video would generate a spike in Google Search Volume for the famous individuals appearing in it. This tool visually demonstrates how the extraction of multimodal features is performed on a video.",
+        "This is the web application I developed for the research at [DSLab](https://sites.google.com/site/datasciencelaboratory) that was sponsored by [ETRI (Electronics and Telecommunications Research Institute)](https://www.etri.re.kr/eng/main/main.etri) for the project on Development of Previsional Intelligence Based on Long-term Visual Memory Network.",
+        "We researched multimodal video analysis for social forecasting on famous individuals, using a [video dataset](https://github.com/DSLQuant/SAPSP/tree/main) we developed ourselves. The task: predict whether a video would generate a spike in Google Search Volume for the famous individuals appearing in it. This tool visually demonstrates how the extraction of multimodal features is performed on a video.",
       ],
     },
     {
@@ -103,17 +103,17 @@ const multimodalEncoderVisualizer: Project = {
     },
     {
       kind: "table",
-      heading: "Video dataset",
+      heading: "Speaker-aware Public Salience Prediction Dataset",
       caption: "The dataset we built for the task.",
       columns: ["Category", "Value"],
       rows: [
-        ["# of Unique Videos", "7,335"],
-        ["Avg. Video Duration", "9m 17s"],
-        ["Total Duration", "47d 6h 40m 59s"],
-        ["# of Famous Figures", "177"],
+        ["# of Unique Videos", "8,566"],
+        ["Avg. Video Duration", "553 seconds"],
+        ["Total Duration", "1315 hours"],
+        ["# of Famous Figures", "213"],
         ["Period", "Jan 1, 2023 – Jun 30, 2025"],
-        ["# of Video–Person Pairs", "22,540"],
-        ["# of Pairs with Label = 1", "6,865"],
+        ["Avg. Figures per Video", "2.97"],
+        ["Positive/Negative Ratio", "46% (Pos.) / 54% (Neg.)"],
       ],
     },
     {
@@ -123,6 +123,21 @@ const multimodalEncoderVisualizer: Project = {
       alt: "Pie chart of occupation type distribution: Celebrity 47.5%, Politician 35.5%, Entrepreneur 17.0%",
       width: 546,
       height: 480,
+    },
+    {
+      kind: "prose",
+      heading: "Dataset Labeling",
+      paragraphs: [
+        "We labeled the dataset by collecting Google Search Volume data for the famous individuals appearing in the videos, and then labeling each video as a positive or negative sample based on whether it generated a spike in search volume for the individuals. We leveraged an algorithm called S-H-ESD (Seasonal Hybrid Extreme Studentized Deviate) (Hochenbaum et al., 2017), which is a statistical method for detecting anomalies in time series data, to identify spikes in search volume.",
+      ],
+    },
+    {
+      kind: "figure",
+      caption: "Example of labeled videos.",
+      src: "/projects/multimodal-encoder-visualizer/image (2).png",
+      alt: "Two labeled news clips above a S-H-ESD plot of Donald Trump search volume. A Nikki Haley clip is a correctly predicted jump; a Walmart tariff clip is a correctly predicted no-jump. Arrows point to the corresponding dates on the time series.",
+      width: 1146,
+      height: 540,
     },
     {
       kind: "prose",
