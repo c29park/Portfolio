@@ -1,6 +1,13 @@
 # Chris Park — Portfolio
 
-Next.js 15 (App Router) + Tailwind CSS v4, built to deploy on Vercel.
+Next.js 15 (App Router) + Tailwind CSS v4, deployed on Vercel.
+
+**Live: https://chris-park-portfolio.vercel.app**
+
+The Vercel project is `chris-park-portfolio`, connected to this repo — every push
+to `main` deploys to production. Note that only the short alias above is public;
+the `-c29park` and per-deployment URLs sit behind Vercel Authentication and will
+redirect you to a login page.
 
 ## Local development
 
