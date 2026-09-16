@@ -18,7 +18,7 @@ const INLINE_LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g;
  * Builds React elements rather than an HTML string, so content text is never
  * interpreted as markup — no dangerouslySetInnerHTML, nothing to escape.
  */
-function withLinks(text: string): React.ReactNode {
+export function withLinks(text: string): React.ReactNode {
   const nodes: React.ReactNode[] = [];
   let cursor = 0;
 

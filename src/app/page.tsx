@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
+import { withLinks } from "@/components/Blocks";
 
 export default function Home() {
   return (
@@ -94,7 +95,7 @@ export default function Home() {
           <div className="max-w-2xl space-y-4">
             {site.bio.map((paragraph) => (
               <p key={paragraph} className="leading-relaxed text-muted">
-                {paragraph}
+                {withLinks(paragraph)}
               </p>
             ))}
           </div>

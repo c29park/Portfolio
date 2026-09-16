@@ -134,7 +134,7 @@ const multimodalEncoderVisualizer: Project = {
     {
       kind: "figure",
       caption: "Example of labeled videos.",
-      src: "/projects/multimodal-encoder-visualizer/image (2).png",
+      src: "/projects/multimodal-encoder-visualizer/dataset-labeling-example.png",
       alt: "Two labeled news clips above a S-H-ESD plot of Donald Trump search volume. A Nikki Haley clip is a correctly predicted jump; a Walmart tariff clip is a correctly predicted no-jump. Arrows point to the corresponding dates on the time series.",
       width: 1146,
       height: 540,
