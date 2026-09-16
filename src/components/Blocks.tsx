@@ -58,13 +58,16 @@ function Caption({ children }: { children: string }) {
 
 function ProseBlock({ block }: { block: Extract<Block, { kind: "prose" }> }) {
   return (
-    <section className="space-y-4">
-      {block.heading && <Heading>{block.heading}</Heading>}
-      {block.paragraphs.map((paragraph) => (
-        <p key={paragraph} className="leading-relaxed text-muted">
-          {withLinks(paragraph)}
-        </p>
-      ))}
+    <section>
+      <div className="space-y-4">
+        {block.heading && <Heading>{block.heading}</Heading>}
+        {block.paragraphs.map((paragraph) => (
+          <p key={paragraph} className="leading-relaxed text-muted">
+            {withLinks(paragraph)}
+          </p>
+        ))}
+      </div>
+      {block.caption && <Caption>{block.caption}</Caption>}
     </section>
   );
 }

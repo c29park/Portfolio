@@ -6,7 +6,14 @@ import {
 } from "./projects-ported";
 
 export type Block =
-  | { kind: "prose"; heading?: string; paragraphs: string[] }
+  | {
+      kind: "prose";
+      heading?: string;
+      paragraphs: string[];
+      /** Optional aside rendered under the paragraphs, same styling as figure
+       *  and table captions. */
+      caption?: string;
+    }
   | {
       kind: "video";
       heading: string;
