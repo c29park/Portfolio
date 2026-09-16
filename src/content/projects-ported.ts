@@ -14,7 +14,7 @@ export const smileDetection: Project = {
   period: "2024",
   org: "Personal project",
   tags: ["Computer Vision", "CNN", "TensorFlow / Keras", "Python"],
-  cover: "/projects/smile-detection/sample-images.png",
+  cover: "/media/smile-detection/sample-images.png",
   blocks: [
     {
       kind: "prose",
@@ -42,7 +42,7 @@ export const smileDetection: Project = {
       kind: "figure",
       caption:
         "The Kaggle download cell, followed by the data formatting code described below.",
-      src: "/projects/smile-detection/data-formatting-code.png",
+      src: "/media/smile-detection/data-formatting-code.png",
       alt: "Jupyter notebook showing an opendatasets Kaggle download cell, then a preprocessing cell that loads images from not_smiling and smiling folders into X and y arrays.",
       width: 1189,
       height: 884,
@@ -65,7 +65,7 @@ export const smileDetection: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/smile-detection/train-test-split-code.png",
+      src: "/media/smile-detection/train-test-split-code.png",
       alt: "Code calling train_test_split with test_size 0.20, then dividing both datasets by 255 to normalize.",
       width: 600,
       height: 81,
@@ -79,7 +79,7 @@ export const smileDetection: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/smile-detection/sample-images.png",
+      src: "/media/smile-detection/sample-images.png",
       alt: "A grid of eight sample face images from the training set, each captioned with its smiling or not_smiling label.",
       width: 600,
       height: 363,
@@ -93,7 +93,7 @@ export const smileDetection: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/smile-detection/one-hot-encoding-code.png",
+      src: "/media/smile-detection/one-hot-encoding-code.png",
       alt: "Code applying LabelEncoder to convert the not_smiling and smiling labels to 0 and 1.",
       width: 600,
       height: 55,
@@ -108,7 +108,7 @@ export const smileDetection: Project = {
     {
       kind: "figure",
       heading: "1. Convolutional neural network",
-      src: "/projects/smile-detection/cnn-architecture-code.png",
+      src: "/media/smile-detection/cnn-architecture-code.png",
       alt: "Keras model definition with two Conv2D layers, max pooling, dropout, flatten, and dense layers, followed by the model summary.",
       width: 600,
       height: 535,
@@ -123,7 +123,7 @@ export const smileDetection: Project = {
     {
       kind: "figure",
       heading: "2. Model testing",
-      src: "/projects/smile-detection/model-testing-code.png",
+      src: "/media/smile-detection/model-testing-code.png",
       alt: "Code compiling and fitting the model, saving it as a keras file, and printing the evaluated accuracy.",
       width: 600,
       height: 207,
@@ -145,7 +145,7 @@ export const fraudDetection: Project = {
   period: "2024",
   org: "First work term",
   tags: ["Machine Learning", "NLP", "Azure AI", "Prototype"],
-  cover: "/projects/fraud-detection/cover.jpg",
+  cover: "/media/fraud-detection/cover.jpg",
   blocks: [
     {
       kind: "prose",
@@ -176,7 +176,7 @@ export const fraudDetection: Project = {
     {
       kind: "figure",
       heading: "Pipeline sequence flow chart",
-      src: "/projects/fraud-detection/pipeline-flowchart.png",
+      src: "/media/fraud-detection/pipeline-flowchart.png",
       alt: "Flow chart of the training pipeline, from data collection and feature engineering through model training, validation, testing and deployment, to monitoring and maintenance.",
       width: 1768,
       height: 1002,
@@ -202,7 +202,7 @@ export const escapeFromMars: Project = {
   period: "2023",
   org: "Personal project",
   tags: ["Unity", "C#", "Game Design", "OOP"],
-  cover: "/projects/3d-game-escape-from-mars/gameplay-poster.jpg",
+  cover: "/media/3d-game-escape-from-mars/gameplay-poster.jpg",
   blocks: [
     {
       kind: "prose",
@@ -219,7 +219,7 @@ export const escapeFromMars: Project = {
       caption:
         "Playing through the level: the objective text reads “Find and collect all fuel” rather than the sample game's kill-all-enemies goal.",
       videoId: "v2DsKsLy6So",
-      poster: "/projects/3d-game-escape-from-mars/gameplay-poster.jpg",
+      poster: "/media/3d-game-escape-from-mars/gameplay-poster.jpg",
       duration: "2:29",
     },
     {
@@ -240,7 +240,7 @@ export const vexRobotics: Project = {
   period: "2019–2023",
   org: "VEX Robotics Competition — Team 1010R",
   tags: ["C++", "Control Systems", "Odometry", "Robotics"],
-  cover: "/projects/vex-robotics/section-robot.png",
+  cover: "/media/vex-robotics/section-robot.png",
   blocks: [
     {
       kind: "prose",
@@ -261,7 +261,7 @@ export const vexRobotics: Project = {
     {
       kind: "figure",
       caption: "Robot frontal top view.",
-      src: "/projects/vex-robotics/section-robot.png",
+      src: "/media/vex-robotics/section-robot.png",
       alt: "Front-top view of the VEX robot, showing the metal frame, flex wheels and drivetrain.",
       width: 420,
       height: 387,
@@ -275,14 +275,14 @@ export const vexRobotics: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/intake-system.png",
+      src: "/media/vex-robotics/intake-system.png",
       alt: "The intake system: three flex wheels and a conveyor belt chained to a single motor.",
       width: 371,
       height: 425,
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/intake-system-detail.png",
+      src: "/media/vex-robotics/intake-system-detail.png",
       alt: "Closer view of the intake assembly.",
       width: 373,
       height: 186,
@@ -296,7 +296,7 @@ export const vexRobotics: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/roller-system.png",
+      src: "/media/vex-robotics/roller-system.png",
       alt: "The roller system: three flex wheels driven by one motor, with an optical sensor mounted below them.",
       width: 450,
       height: 416,
@@ -311,7 +311,7 @@ export const vexRobotics: Project = {
     {
       kind: "figure",
       caption: "Top view.",
-      src: "/projects/vex-robotics/expansion-top-view.png",
+      src: "/media/vex-robotics/expansion-top-view.png",
       alt: "Top view of the expansion system, showing four C-channel boxes holding loaded strings.",
       width: 423,
       height: 209,
@@ -319,7 +319,7 @@ export const vexRobotics: Project = {
     {
       kind: "figure",
       caption: "Pneumatic pistons.",
-      src: "/projects/vex-robotics/pneumatic-pistons.png",
+      src: "/media/vex-robotics/pneumatic-pistons.png",
       alt: "Pneumatic pistons mounted on the robot, connected to the pressurized air tank.",
       width: 396,
       height: 387,
@@ -333,21 +333,21 @@ export const vexRobotics: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/flywheel-system.png",
+      src: "/media/vex-robotics/flywheel-system.png",
       alt: "The flywheel: two black flex wheels driven by a single motor.",
       width: 198,
       height: 126,
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/flywheel-detail-1.png",
+      src: "/media/vex-robotics/flywheel-detail-1.png",
       alt: "Closer view of the flywheel assembly on the robot.",
       width: 254,
       height: 315,
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/flywheel-detail-2.png",
+      src: "/media/vex-robotics/flywheel-detail-2.png",
       alt: "The disc pusher mechanism feeding discs into the flywheel.",
       width: 326,
       height: 276,
@@ -362,7 +362,7 @@ export const vexRobotics: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/mecanum-drivetrain.png",
+      src: "/media/vex-robotics/mecanum-drivetrain.png",
       alt: "The four-motor mecanum wheel drivetrain with tracking wheels and encoders.",
       width: 427,
       height: 378,
@@ -378,7 +378,7 @@ export const vexRobotics: Project = {
     {
       kind: "figure",
       heading: "PD thread",
-      src: "/projects/vex-robotics/pd-thread-code.png",
+      src: "/media/vex-robotics/pd-thread-code.png",
       alt: "Snippet of the main PD controller function, resetting encoders, averaging wheel positions, computing error and derivative, and setting motor voltage.",
       width: 1647,
       height: 1739,
@@ -400,7 +400,7 @@ export const vexRobotics: Project = {
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/matlab-autotuner.png",
+      src: "/media/vex-robotics/matlab-autotuner.png",
       alt: "MATLAB Simulink block diagram of the closed-loop PID auto-tuner, customized to output only proportional and derivative values.",
       width: 600,
       height: 153,
@@ -418,7 +418,7 @@ export const vexRobotics: Project = {
       heading: "Odometry derivation",
       caption:
         "The robot: circle = center of the robot, rectangle = tracking wheel with encoder.",
-      src: "/projects/vex-robotics/odometry-robot-diagram.png",
+      src: "/media/vex-robotics/odometry-robot-diagram.png",
       alt: "Line diagram of the robot showing the centre point and three tracking wheels: left, right, and back.",
       width: 252,
       height: 254,
@@ -468,7 +468,7 @@ for the robot.`,
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/odometry-arc-derivation.png",
+      src: "/media/vex-robotics/odometry-arc-derivation.png",
       alt: "Geometric diagram of the robot travelling along an arc, showing the radius, the angle theta, and the arc lengths of the left and right tracking wheels.",
       width: 580,
       height: 486,
@@ -476,7 +476,7 @@ for the robot.`,
     {
       kind: "figure",
       heading: "Odometry code",
-      src: "/projects/vex-robotics/odometry-code.png",
+      src: "/media/vex-robotics/odometry-code.png",
       alt: "The positionTracking task, computing X and Y field coordinates from encoder values and printing them to the controller and brain screens.",
       width: 600,
       height: 311,
@@ -497,7 +497,7 @@ for the robot.`,
     },
     {
       kind: "figure",
-      src: "/projects/vex-robotics/volunteering.webp",
+      src: "/media/vex-robotics/volunteering.webp",
       alt: "A VEX Robotics Competition tournament in progress.",
       width: 696,
       height: 392,

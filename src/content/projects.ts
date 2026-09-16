@@ -79,7 +79,7 @@ const multimodalEncoderVisualizer: Project = {
   period: "2025",
   org: "DSLab, Kwangwoon University — sponsored by ETRI",
   tags: ["Multimodal ML", "Video Analysis", "Web App", "Research"],
-  cover: "/projects/multimodal-encoder-visualizer/app-demonstration-poster.jpg",
+  cover: "/media/multimodal-encoder-visualizer/app-demonstration-poster.jpg",
   blocks: [
     {
       kind: "prose",
@@ -95,7 +95,7 @@ const multimodalEncoderVisualizer: Project = {
       caption:
         "How the visualizer extracts multimodal features from a video: active speaker detection and diarization, vocal emotion analysis, and facial expression analysis.",
       videoId: "msgui-kY1lY",
-      poster: "/projects/multimodal-encoder-visualizer/video-processing-explanation-poster.jpg",
+      poster: "/media/multimodal-encoder-visualizer/video-processing-explanation-poster.jpg",
       duration: "6:28",
     },
     {
@@ -105,7 +105,7 @@ const multimodalEncoderVisualizer: Project = {
       caption:
         "A walkthrough of the tool running end to end on a real video, showing the extracted features alongside the transcript.",
       videoId: "igmpV1qh1a4",
-      poster: "/projects/multimodal-encoder-visualizer/app-demonstration-poster.jpg",
+      poster: "/media/multimodal-encoder-visualizer/app-demonstration-poster.jpg",
       duration: "14:16",
     },
     {
@@ -126,7 +126,7 @@ const multimodalEncoderVisualizer: Project = {
     {
       kind: "figure",
       caption: "Pie chart of the types of famous individuals in the dataset.",
-      src: "/projects/multimodal-encoder-visualizer/video-dataset-pie-chart.png",
+      src: "/media/multimodal-encoder-visualizer/video-dataset-pie-chart.png",
       alt: "Pie chart of occupation type distribution: Celebrity 47.5%, Politician 35.5%, Entrepreneur 17.0%",
       width: 546,
       height: 480,
@@ -141,7 +141,7 @@ const multimodalEncoderVisualizer: Project = {
     {
       kind: "figure",
       caption: "Example of labeled videos.",
-      src: "/projects/multimodal-encoder-visualizer/dataset-labeling-example.png",
+      src: "/media/multimodal-encoder-visualizer/dataset-labeling-example.png",
       alt: "Two labeled news clips above a S-H-ESD plot of Donald Trump search volume. A Nikki Haley clip is a correctly predicted jump; a Walmart tariff clip is a correctly predicted no-jump. Arrows point to the corresponding dates on the time series.",
       width: 1146,
       height: 540,
@@ -156,7 +156,7 @@ const multimodalEncoderVisualizer: Project = {
     {
       kind: "figure",
       caption: "Confusion matrix for the transcript-only LLM baseline (jump-first framing).",
-      src: "/projects/multimodal-encoder-visualizer/llm-baseline-results-1.png",
+      src: "/media/multimodal-encoder-visualizer/llm-baseline-results-1.png",
       alt: "Confusion matrix. Actual Jump: 1911 predicted Jump, 852 predicted No Jump. Actual No Jump: 1502 predicted Jump, 1212 predicted No Jump.",
       width: 549,
       height: 456,
