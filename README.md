@@ -47,12 +47,8 @@ Both project videos live on **YouTube (unlisted)**, not in this repo:
 |---|---|---|---|
 | Multimodal Encoder Visualizer | Video Processing Explanation | 6:28 | `msgui-kY1lY` |
 | Multimodal Encoder Visualizer | App Demonstration | 14:16 | `igmpV1qh1a4` |
-| Escape From Mars | Gameplay | 2:29 | **not yet uploaded** |
+| Escape From Mars | Gameplay | 2:29 | `v2DsKsLy6So` |
 
-The Escape From Mars gameplay recording is staged at
-`media-staging/3d-game-escape-from-mars-gameplay-1080p.mp4` (98.7 MiB). That
-directory is gitignored. Upload it as Unlisted, then swap in the commented-out
-`youtube` block in `src/content/projects-ported.ts` and delete the staged file.
 
 They were originally committed as MP4s (23 MB + 97 MB) and have since been
 removed from git history. Keep it that way — a 97 MB blob in a git repo is

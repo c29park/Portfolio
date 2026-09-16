@@ -213,21 +213,17 @@ export const escapeFromMars: Project = {
         "The full game project can be accessed on [c29park/3D-Game-EscapeFromMars](https://github.com/c29park/3D-Game-EscapeFromMars). The original sample game project can be accessed on [Unity FPS Microgame](https://assetstore.unity.com/packages/templates/fps-microgame-156015).",
       ],
     },
-    // The gameplay recording (2:29) is staged at
-    // media-staging/3d-game-escape-from-mars-gameplay-1080p.mp4 and is 98.7 MiB,
-    // too large to commit. Upload it to YouTube as Unlisted, then replace this
-    // comment with:
-    //
-    //   {
-    //     kind: "youtube",
-    //     heading: "Gameplay",
-    //     videoId: "PASTE_11_CHAR_ID_HERE",
-    //     poster: "/projects/3d-game-escape-from-mars/gameplay-poster.jpg",
-    //     duration: "2:29",
-    //   },
+    {
+      kind: "youtube",
+      heading: "Gameplay",
+      caption:
+        "Playing through the level: the objective text reads “Find and collect all fuel” rather than the sample game's kill-all-enemies goal.",
+      videoId: "v2DsKsLy6So",
+      poster: "/projects/3d-game-escape-from-mars/gameplay-poster.jpg",
+      duration: "2:29",
+    },
     {
       kind: "prose",
-      heading: "Gameplay",
       paragraphs: [
         "To re-code the game based on my overall game design, of which the objective is to have the user collect fuels, the main coding skills I employed were object-oriented programming and inheritance and polymorphism. For instance, for the fuel items I had to make a class for fuel items and have it inherit the class of items in general so that I could make it collectable like the healing items. I also edited the game manager and game objective scripts so that the game ended when all 3 fuel items were collected. Additionally, I made the game message pop up, informing the user of how many items there are to pick up to end the game.",
         "The most challenging part of this project was that I had to read all the relevant scripts and analyze them so that I could adjust the code according to my intentions. The non-coding and minor changes made for this game were editing the map, robot placements, and selecting types of robots to put to make the game challenging and entertaining. The robots were also all pre programmed assets that I imported from the unity store.",
